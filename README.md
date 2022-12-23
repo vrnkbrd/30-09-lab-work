@@ -1,59 +1,51 @@
 # 30-09-lab-work
-public class Main {
+```Java
+   public class Main {
     public static void main(String[] args) {
         Complex a = new Complex(1, 1);
         Complex b = new Complex(0, 1);
         System.out.println(a.Arg());
         System.out.println(b);
-
-
     }
 }
-public class Complex {
-    private double re; //Действительная часть числа
-    private double im; //Мнимая часть числа
 
-    public Complex(double re, double im) {
+   public class Complex {
+    private double re; 
+    private double im; 
+   
+   public Complex(double re, double im) {
         this.re = re;
         this.im = im;
     }
 
-    public Complex() // В том случае, если мы не указываем значения при создании класса
+   public Complex() 
     {
         this.re = 0;
         this.im = 0;
     }
 
-
-    public static Complex Sum(Complex z1, Complex z2) //Статический метод, используемый для сложения двух комплексных
+    public static Complex Sum(Complex z1, Complex z2) 
     {
-        return new Complex(z1.re + z2.re, z1.im + z2.im); /* Возвращаем комплексное число, чтобы хранить
-                                                              его в другой переменной */
+        return new Complex(z1.re + z2.re, z1.im + z2.im); 
     }
 
-    public static Complex Scalling(Complex z, Double koef) /* Опять же, статический метод для того, чтобы
-                                                            умножать на скаляр. Первый парметр- объект класса Complex,
-                                                            второй- скаляр, на который нужно умножить */ {
+    public static Complex Scalling(Complex z, Double koef) {
         return new Complex(koef * z.re, koef * z.im);
     }
 
     public static Complex Mul(Complex z1, Complex z2) {
-        return new Complex(z1.re * z2.re - z1.im * z2.im, z1.re * z2.im + z2.re * z1.im); /* Сатитический метод,
-                                                                                     возвращающий произведение двух чисел
-                                                                                     */
+        return new Complex(z1.re * z2.re - z1.im * z2.im, z1.re * z2.im + z2.re * z1.im); 
     }
 
-    public static Complex Div(Complex z1, Complex z2) // Возвращает результат деления
+    public static Complex Div(Complex z1, Complex z2) 
     {
         return new Complex((z1.re * z2.re + z1.im * z2.im) / (z2.re * z2.re + z2.im * z2.im), (z2.re * z1.im - z1.re * z2.im) / (z2.re * z2.re + z2.im * z2.im));
     }
 
-    public Double Mod() // Метод, возвращающий модуль комплексного числа
+    public Double Mod() 
     {
         return Math.sqrt(re * re + im * im);
     }
-
-
 
 
     @Override
@@ -116,3 +108,4 @@ public class Complex {
         return 0;
     }
 }
+```
